@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<title>Alrect Shop — Official Store</title>
+<link rel="icon" href="https://files.catbox.moe/ugwp53.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;700;900&family=Pacifico&family=Bebas+Neue&family=Dancing+Script:wght@700&family=Rajdhani:wght@700&family=Cinzel:wght@700&family=Press+Start+2P&family=Righteous&family=Russo+One&family=Monoton&family=Audiowide&family=Exo+2:wght@700;900&family=Permanent+Marker&family=Titan+One&family=Black+Ops+One&family=Bungee&family=Bungee+Inline&family=Creepster&family=Lobster&family=Satisfy&family=Abril+Fatface&family=Alfa+Slab+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css">
+<link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css">
+<link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="particles" id="particles"></div>
+
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <img src="https://files.catbox.moe/ugwp53.jpg" alt="logo">
+    <div class="sidebar-logo-info">
+      <div class="sidebar-logo-name">Alrect Shop</div>
+      <div class="sidebar-logo-sub">Official Store</div>
+    </div>
+    <button class="music-btn" id="musicBtnDesktop" onclick="toggleMusic()" title="Musik On/Off">
+      <i class="fi fi-rr-music" style="line-height:1"></i>
+    </button>
+  </div>
+  <div class="tab-search-wrap">
+    <input class="tab-search" id="sidebarSearch" placeholder="🔍 Cari menu / produk..." oninput="handleSearch(this.value)">
+  </div>
+  <nav class="sidebar-nav">
+    <div class="nav-group-label">Menu</div>
+    <div class="nav-item active" id="navitem-home" onclick="switchTab('home','Beranda')"><i class="fi fi-rr-home"></i> Beranda</div>
+    <div class="nav-item" id="navitem-ml" onclick="switchTab('ml','Top Up ML')"><i class="fi fi-rr-gamepad"></i> Top Up ML</div>
+    <div class="nav-sep"></div>
+    <div class="nav-group-label">Tools</div>
+    <div class="nav-item" id="navitem-calc" onclick="switchTab('calc','Kalkulator')"><i class="fi fi-rr-calculator"></i> Kalkulator Harga</div>
+    <div class="nav-item" id="navitem-logo" onclick="switchTab('logo','Logo Maker')"><i class="fi fi-rr-image"></i> Logo Maker</div>
+  </nav>
+  <div class="sidebar-footer">
+    <div class="sidebar-credit">Alrect Vincent Store<br>© 2025 All rights reserved</div>
+  </div>
+</aside>
+
+<div class="main-content">
+  <div class="mobile-topbar" id="mobileTopbar">
+    <div class="mobile-topbar-logo">
+      <img src="https://files.catbox.moe/ugwp53.jpg" alt="logo">
+      <div class="mobile-topbar-name">Alrect Shop</div>
+    </div>
+    <div class="mobile-topbar-right">
+      <button class="mobile-music-btn" id="musicBtnMobile" onclick="toggleMusic()">
+        <i class="fi fi-rr-music" style="line-height:1"></i>
+      </button>
+      <button class="mobile-cart-btn" onclick="toggleCart()">
+        <i class="fi fi-br-shopping-cart" style="line-height:1;font-size:13px"></i>
+        Keranjang
+        <span class="cart-badge" id="cartBadgeMobile" style="position:absolute;top:-6px;right:-6px;">0</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="topbar">
+    <span class="topbar-title" id="topbarTitle">🏠 Beranda</span>
+    <div class="topbar-right">
+      <button class="cart-btn" onclick="toggleCart()">
+        <i class="fi fi-br-shopping-cart" style="line-height:1;font-size:14px"></i>
+        Keranjang
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="tab-page active" id="tab-home">
+    <div class="hero-section">
+      <div class="hero-badge"><i class="fi fi-rr-shield-check" style="line-height:1"></i> Official &amp; Trusted Store</div>
+      <h1 class="hero-title">Alrect <span>Shop</span></h1>
+      <p class="hero-sub">Top Up • Script • APK Mod • Jasa Website &amp; Banyak Lagi 🔥</p>
+      <div class="hero-thumb"><img src="https://files.catbox.moe/ugwp53.jpg" alt="Alrect Shop"></div>
+      <div class="stats-row">
+        <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Trusted</div></div>
+        <div class="stat"><div class="stat-num">Fast</div><div class="stat-label">Proses</div></div>
+        <div class="stat"><div class="stat-num">24/7</div><div class="stat-label">Support</div></div>
+      </div>
+    </div>
+
+    <div class="products-wrap">
+      <div class="section-hdr"><i class="fi fi-rr-gamepad" style="line-height:1"></i> Script Roblox Executor</div>
+      <div class="product-grid">
+        <div class="product-card" data-id="roblox-antilag" data-name="Anti Lag Script Roblox" data-price="5000" data-icon="⚡" data-drip="0"><span class="cat-tag cat-roblox">🎮 Roblox</span><span class="product-add">+</span><span class="product-icon">⚡</span><div class="product-name">Anti Lag Script</div><div class="product-desc">Performa game lebih smooth</div><div class="product-price">Rp 5.000</div></div>
+        <div class="product-card" data-id="roblox-gen" data-name="Script Generator Roblox" data-price="8000" data-icon="🔧" data-drip="0"><span class="cat-tag cat-roblox">🎮 Roblox</span><span class="product-add">+</span><span class="product-icon">🔧</span><div class="product-name">Script Generator</div><div class="product-desc">Generate script otomatis</div><div class="product-price">Rp 8.000</div></div>
+      </div>
+
+      <div class="divider-line"><span>APK Mod</span></div>
+      <div class="section-hdr"><i class="fi fi-rr-smartphone" style="line-height:1"></i> APK Mod Premium</div>
+      <div class="product-grid">
+        <div class="product-card" data-id="capcut" data-name="CapCut Premium Mod" data-price="5000" data-icon="🎬" data-drip="0">
+          <span class="cat-tag cat-apk">📱 APK</span><span class="product-add">+</span>
+          <span class="product-icon">🎬</span><div class="product-name">CapCut Premium</div>
+          <div class="product-desc">Semua fitur pro, no watermark</div><div class="product-price">Rp 5.000</div>
+        </div>
+        <div class="product-card" data-id="netflix" data-name="Netflix Premium Mod" data-price="4000" data-icon="🎬" data-drip="0">
+          <span class="cat-tag cat-apk">📱 APK</span><span class="product-add">+</span>
+          <span class="product-icon">🎬</span><div class="product-name">Netflix Premium</div>
+          <div class="product-desc">Nonton semua konten HD</div><div class="product-price">Rp 4.000</div>
+        </div>
+        <div class="product-card" data-id="alight" data-name="Alight Motion Premium Mod" data-price="10000" data-icon="🎞️" data-drip="0">
+          <span class="cat-tag cat-apk">📱 APK</span><span class="product-add">+</span>
+          <span class="product-icon">🎞️</span><div class="product-name">Alight Motion Premium</div>
+          <div class="product-desc">Semua pack &amp; efek unlock</div><div class="product-price">Rp 10.000</div>
+        </div>
+      </div>
+
+      <div class="divider-line"><span>Top Up FF</span></div>
+      <div class="section-hdr"><i class="fi fi-rr-diamond" style="line-height:1"></i> Top Up Free Fire 💎</div>
+      <div class="product-grid">
+        <div class="product-card" data-id="ff5" data-name="5 Diamond FF" data-price="1000" data-icon="💎" data-drip="0"><span class="cat-tag cat-topup">💎 FF</span><span class="product-add">+</span><span class="product-icon">💎</span><div class="product-name">5 Diamond</div><div class="product-price">Rp 1.000</div></div>
+        <div class="product-card" data-id="ff12" data-name="12 Diamond FF" data-price="4000" data-icon="💎" data-drip="0"><span class="cat-tag cat-topup">💎 FF</span><span class="product-add">+</span><span class="product-icon">💎</span><div class="product-name">12 Diamond</div><div class="product-price">Rp 4.000</div></div>
+        <div class="product-card" data-id="ff70" data-name="70 Diamond FF" data-price="8000" data-icon="💎" data-drip="0"><span class="cat-tag cat-topup">💎 FF</span><span class="product-add">+</span><span class="product-icon">💎</span><div class="product-name">70 Diamond</div><div class="product-price">Rp 8.000</div></div>
+        <div class="product-card" data-id="ff100" data-name="100 Diamond FF" data-price="13000" data-icon="💎" data-drip="0"><span class="cat-tag cat-topup">💎 FF</span><span class="product-add">+</span><span class="product-icon">💎</span><div class="product-name">100 Diamond</div><div class="product-price">Rp 13.000</div></div>
+        <div class="product-card" data-id="ff-member" data-name="Membership Level Up Pass FF" data-price="15000" data-icon="👑" data-drip="0"><span class="cat-tag cat-topup">💎 FF</span><span class="product-add">+</span><span class="product-icon">👑</span><div class="product-name">Membership Level Up Pass</div><div class="product-price">Rp 15.000</div></div>
+        <div class="product-card" data-id="ff120" data-name="120 Diamond FF" data-price="20000" data-icon="💎" data-drip="0"><span class="cat-tag cat-topup">💎 FF</span><span class="product-add">+</span><span class="product-icon">💎</span><div class="product-name">120 Diamond</div><div class="product-price">Rp 20.000</div></div>
+        <div class="product-card" data-id="ff270" data-name="270 Diamond FF" data-price="28000" data-icon="💎" data-drip="0"><span class="cat-tag cat-topup">💎 FF</span><span class="product-add">+</span><span class="product-icon">💎</span><div class="product-name">270 Diamond</div><div class="product-price">Rp 28.000</div></div>
+        <div class="product-card" data-id="ff-booyah" data-name="Booyah Pass FF" data-price="43000" data-icon="🏆" data-drip="0"><span class="cat-tag cat-topup">💎 FF</span><span class="product-add">+</span><span class="product-icon">🏆</span><div class="product-name">Booyah Pass</div><div class="product-price">Rp 43.000</div></div>
+      </div>
+
+      <div class="divider-line"><span>FF Mod</span></div>
+      <div class="section-hdr"><i class="fi fi-rr-fire" style="line-height:1"></i> FF Mod Menu — Drip Client</div>
+      <div class="note-banner"><i class="fi fi-rr-info" style="line-height:1;flex-shrink:0"></i><span>Produk milik partner kami. <strong>Order kunci → Admin Drip: 085137574558</strong></span></div>
+      <div class="product-grid">
+        <div class="product-card drip-card" data-id="drip-1d" data-name="Drip Client v1.1 — 1 Hari" data-price="20000" data-icon="🔥" data-drip="1"><span class="cat-tag cat-drip">🔥 Drip</span><span class="product-add">+</span><span class="product-icon">🔥</span><div class="product-name">Drip Client v1.1</div><div class="product-desc">Akses 1 Hari</div><div class="product-price">Rp 20.000</div></div>
+        <div class="product-card drip-card" data-id="drip-3d" data-name="Drip Client v1.1 — 3 Hari" data-price="35000" data-icon="🔥" data-drip="1"><span class="cat-tag cat-drip">🔥 Drip</span><span class="product-add">+</span><span class="product-icon">🔥</span><div class="product-name">Drip Client v1.1</div><div class="product-desc">Akses 3 Hari</div><div class="product-price">Rp 35.000</div></div>
+        <div class="product-card drip-card" data-id="drip-7d" data-name="Drip Client v1.1 — 7 Hari" data-price="65000" data-icon="🔥" data-drip="1"><span class="cat-tag cat-drip">🔥 Drip</span><span class="product-add">+</span><span class="product-icon">🔥</span><div class="product-name">Drip Client v1.1</div><div class="product-desc">Akses 7 Hari</div><div class="product-price">Rp 65.000</div></div>
+        <div class="product-card drip-card" data-id="drip-15d" data-name="Drip Client v1.1 — 15 Hari" data-price="100000" data-icon="🔥" data-drip="1"><span class="cat-tag cat-drip">🔥 Drip</span><span class="product-add">+</span><span class="product-icon">🔥</span><div class="product-name">Drip Client v1.1</div><div class="product-desc">Akses 15 Hari</div><div class="product-price">Rp 100.000</div></div>
+        <div class="product-card drip-card" data-id="drip-30d" data-name="Drip Client v1.1 — 30 Hari" data-price="160000" data-icon="🔥" data-drip="1"><span class="cat-tag cat-drip">🔥 Drip</span><span class="product-add">+</span><span class="product-icon">🔥</span><div class="product-name">Drip Client v1.1</div><div class="product-desc">Akses 30 Hari</div><div class="product-price">Rp 160.000</div></div>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;margin-bottom:4px">
+        <a href="https://www.mediafire.com/file/dmepbv05qakrvf4/DRIPCLIENT_V1.1.reverse.apks/file" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-gold"><i class="fi fi-rr-download" style="line-height:1"></i> Download APK</a>
+        <a href="https://youtu.be/cHv_wcA_oow" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-red"><i class="fi fi-br-play" style="line-height:1"></i> Tutorial Pasang</a>
+      </div>
+
+      <div class="divider-line"><span>Website</span></div>
+      <div class="section-hdr"><i class="fi fi-rr-globe" style="line-height:1"></i> Jasa Website</div>
+      <div class="product-grid">
+        <div class="product-card" data-id="web-google" data-name="Upload Website ke Google" data-price="10000" data-icon="🌍" data-drip="0"><span class="cat-tag cat-web">🌐 Web</span><span class="product-add">+</span><span class="product-icon">🌍</span><div class="product-name">Upload ke Google</div><div class="product-desc">Website muncul di Google Search</div><div class="product-price">Rp 10.000</div></div>
+        <div class="product-card" data-id="web-porto" data-name="Bikin Website Portofolio" data-price="2000" data-icon="💼" data-drip="0"><span class="cat-tag cat-web">🌐 Web</span><span class="product-add">+</span><span class="product-icon">💼</span><div class="product-name">Website Portofolio</div><div class="product-desc">Tunjukin skill &amp; karya lo</div><div class="product-price">Rp 2.000</div></div>
+        <div class="product-card" data-id="web-jb" data-name="Bikin Website JB / Toko Online" data-price="3000" data-icon="🛍️" data-drip="0"><span class="cat-tag cat-web">🌐 Web</span><span class="product-add">+</span><span class="product-icon">🛍️</span><div class="product-name">Website JB / Toko</div><div class="product-desc">Toko online buat jualan lo</div><div class="product-price">Rp 3.000</div></div>
+        <div class="product-card" data-id="foto-google" data-name="Jasa Foto ke Google" data-price="2000" data-icon="📸" data-drip="0"><span class="cat-tag cat-web">🌐 Web</span><span class="product-add">+</span><span class="product-icon">📸</span><div class="product-name">Jasa Foto ke Google</div><div class="product-desc">Foto/gambar muncul di Google</div><div class="product-price">Rp 2.000</div></div>
+      </div>
+
+      <div class="divider-line"><span>Lainnya</span></div>
+      <div class="section-hdr"><i class="fi fi-rr-star" style="line-height:1"></i> Jasa Lainnya</div>
+      <div class="product-grid">
+        <div class="product-card" data-id="ganti-nama" data-name="Ganti Nama Profil JB" data-price="5000" data-icon="📛" data-drip="0"><span class="cat-tag cat-jasa">✨ Jasa</span><span class="product-add">+</span><span class="product-icon">📛</span><div class="product-name">Ganti Nama Profil JB</div><div class="product-desc">Semua nama di JB jadi nama lo</div><div class="product-price">Rp 5.000</div></div>
+        <div class="product-card" data-id="tiktok-like" data-name="Suntik TikTok Like" data-price="5000" data-icon="❤️" data-drip="0"><span class="cat-tag cat-jasa">✨ Jasa</span><span class="product-add">+</span><span class="product-icon">❤️</span><div class="product-name">Suntik TikTok Like</div><div class="product-desc">Nambah like di video TikTok</div><div class="product-price">Rp 5.000</div></div>
+        <div class="product-card" data-id="flw100" data-name="Follower TikTok 100 Indonesia" data-price="13000" data-icon="👤" data-drip="0"><span class="cat-tag cat-jasa">✨ Jasa</span><span class="product-add">+</span><span class="product-icon">👤</span><div class="product-name">Follower 100 Indonesia</div><div class="product-desc">Akun Indonesia asli</div><div class="product-price">Rp 13.000</div></div>
+        <div class="product-card" data-id="flw200" data-name="Follower TikTok 200 Indonesia" data-price="19000" data-icon="👤" data-drip="0"><span class="cat-tag cat-jasa">✨ Jasa</span><span class="product-add">+</span><span class="product-icon">👤</span><div class="product-name">Follower 200 Indonesia</div><div class="product-desc">Akun Indonesia asli</div><div class="product-price">Rp 19.000</div></div>
+        <div class="product-card" data-id="flw1000" data-name="Follower TikTok 1000 Indonesia" data-price="91000" data-icon="👥" data-drip="0"><span class="cat-tag cat-jasa">✨ Jasa</span><span class="product-add">+</span><span class="product-icon">👥</span><div class="product-name">Follower 1000 Indonesia</div><div class="product-desc">Akun Indonesia asli</div><div class="product-price">Rp 91.000</div></div>
+        <div class="product-card" data-id="apk-kanon" data-name="APK Kanon Blast WA" data-price="2000" data-icon="📲" data-drip="0"><span class="cat-tag cat-jasa">✨ Jasa</span><span class="product-add">+</span><span class="product-icon">📲</span><div class="product-name">APK Kanon</div><div class="product-desc">Blast pesan WA massal</div><div class="product-price">Rp 2.000</div></div>
+        <div class="product-card" data-id="autosave" data-name="APK Auto Save Kontak WA" data-price="1000" data-icon="💾" data-drip="0"><span class="cat-tag cat-jasa">✨ Jasa</span><span class="product-add">+</span><span class="product-icon">💾</span><div class="product-name">APK Auto Save Kontak</div><div class="product-desc">Simpan kontak WA otomatis</div><div class="product-price">Rp 1.000</div></div>
+        <div class="product-card" data-id="web2apk" data-name="Jasa Convert Web ke APK Android" data-price="5000" data-icon="📦" data-drip="0"><span class="cat-tag cat-jasa">✨ Jasa</span><span class="product-add">+</span><span class="product-icon">📦</span><div class="product-name">Jasa Web → APK</div><div class="product-desc">Website lo jadi Android app</div><div class="product-price">Rp 5.000</div></div>
+        <div class="product-card" data-id="axmanager-plugin" data-name="Plugin Axmanager Gacor by Alrect Gamer" data-price="15000" data-icon="🎮" data-drip="0"><span class="cat-tag cat-jasa">✨ Jasa</span><span class="product-add">+</span><span class="product-icon">🎮</span><div class="product-name">Plugin Axmanager Gacor</div><div class="product-desc">FPS lancar, smooth to HD — FF, ML, dll</div><div class="product-price">Rp 15.000</div></div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <p>© 2025 <a href="https://wa.me/6282192401340">Alrect Shop</a> — Official &amp; Trusted</p>
+      <p style="margin-top:5px;font-size:11px">Ga dibalas = lagi sibuk, tunggu ya pasti dibalas 🙏</p>
+      <div class="credit-badge">
+        <div class="credit-by">Website By</div>
+        <div class="credit-name">Alrect Vincent Store ✦</div>
+      </div>
+    </footer>
+  </div>
+
+  <div class="tab-page" id="tab-ml">
+    <div style="max-width:1100px;margin:0 auto;">
+      <div style="background:linear-gradient(135deg,rgba(26,86,219,0.15),rgba(59,130,246,0.08));border:1px solid rgba(59,130,246,0.2);border-radius:var(--radius-sm);padding:16px 18px;margin-bottom:22px;display:flex;align-items:flex-start;gap:12px;">
+        <i class="fi fi-rr-gamepad" style="font-size:28px;line-height:1;color:#60a5fa;flex-shrink:0;margin-top:2px"></i>
+        <div><div style="font-size:15px;font-weight:800;margin-bottom:4px;color:#60a5fa">Top Up Mobile Legends</div><div style="font-size:12px;color:var(--muted2);line-height:1.5">Proses instan otomatis. Top up Diamond &amp; Membership ML dengan harga terjangkau.</div></div>
+      </div>
+      <div class="ml-subtab-row">
+        <div class="ml-subtab active" onclick="switchMlTab('diamond')"><i class="fi fi-rr-diamond" style="line-height:1"></i> Diamond</div>
+        <div class="ml-subtab" onclick="switchMlTab('membership')"><i class="fi fi-rr-crown" style="line-height:1"></i> Membership</div>
+      </div>
+      <div class="ml-subpage active" id="mlsub-diamond">
+        <div class="section-hdr"><i class="fi fi-rr-diamond" style="line-height:1"></i> ML Diamond</div>
+        <div class="product-grid">
+          <div class="product-card ml-card" data-id="ml-3" data-name="ML 3 Diamond" data-price="1047" data-icon="💎" data-drip="0"><span class="cat-tag cat-ml"><i class="fi fi-rr-diamond" style="line-height:1"></i> ML</span><span class="product-add">+</span><span class="product-icon">💎</span><div class="product-name">ML 3</div><div class="product-price">Rp 1.047</div></div>
+          <div class="product-card ml-card" data-id="ml-5" data-name="ML 5 Diamond" data-price="1480" data-icon="💎" data-drip="0"><span class="cat-tag cat-ml"><i class="fi fi-rr-diamond" style="line-height:1"></i> ML</span><span class="product-add">+</span><span class="product-icon">💎</span><div class="product-name">ML 5</div><div class="product-price">Rp 1.480</div></div>
+          <div class="product-card ml-card" data-id="ml-12" data-name="ML 12 Diamond" data-price="3338" data-icon="💎" data-drip="0"><span class="cat-tag cat-ml"><i class="fi fi-rr-diamond" style="line-height:1"></i> ML</span><span class="product-add">+</span><span class="product-icon">💎</span><div class="product-name">ML 12</div><div class="product-price">Rp 3.338</div></div>
+          <div class="product-card ml-card" data-id="ml-19" data-name="ML 19 Diamond (17+2)" data-price="5375" data-icon="💎" data-drip="0"><span class="cat-tag cat-ml"><i class="fi fi-rr-diamond" style="line-height:1"></i> ML</span><span class="product-add">+</span><span class="product-icon">💎</span><div class="product-name">ML 19 (17+2)</div><div class="product-price">Rp 5.375</div></div>
+          <div class="product-card ml-card" data-id="ml-28" data-name="ML 28 Diamond (26+2)" data-price="7835" data-icon="💎" data-drip="0"><span class="cat-tag cat-ml"><i class="fi fi-rr-diamond" style="line-height:1"></i> ML</span><span class="product-add">+</span><span class="product-icon">💎</span><div class="product-name">ML 28 (26+2)</div><div class="product-price">Rp 7.835</div></div>
+          <div class="product-card ml-card" data-id="ml-59" data-name="ML 59 Diamond (54+5)" data-price="15343" data-icon="💎" data-drip="0"><span class="cat-tag cat-ml"><i class="fi fi-rr-diamond" style="line-height:1"></i> ML</span><span class="product-add">+</span><span class="product-icon">💎</span><div class="product-name">ML 59 (54+5)</div><div class="product-price">Rp 15.343</div></div>
+          <div class="product-card ml-card" data-id="ml-112" data-name="ML 112 Diamond (102+10)" data-price="29525" data-icon="💎" data-drip="0"><span class="cat-tag cat-ml"><i class="fi fi-rr-diamond" style="line-height:1"></i> ML</span><span class="product-add">+</span><span class="product-icon">💎</span><div class="product-name">ML 112 (102+10)</div><div class="product-price">Rp 29.525</div></div>
+          <div class="product-card ml-card" data-id="ml-222" data-name="ML 222 Diamond (202+20)" data-price="56652" data-icon="💎" data-drip="0"><span class="cat-tag cat-ml"><i class="fi fi-rr-diamond" style="line-height:1"></i> ML</span><span class="product-add">+</span><span class="product-icon">💎</span><div class="product-name">ML 222 (202+20)</div><div class="product-price">Rp 56.652</div></div>
+          <div class="product-card ml-card" data-id="ml-514" data-name="ML 514 Diamond (468+46)" data-price="135421" data-icon="💎" data-drip="0"><span class="cat-tag cat-ml"><i class="fi fi-rr-diamond" style="line-height:1"></i> ML</span><span class="product-add">+</span><span class="product-icon">💎</span><div class="product-name">ML 514 (468+46)</div><div class="product-price">Rp 135.421</div></div>
+          <div class="product-card ml-card" data-id="ml-875" data-name="ML 875 Diamond (774+101)" data-price="221857" data-icon="💎" data-drip="0"><span class="cat-tag cat-ml"><i class="fi fi-rr-diamond" style="line-height:1"></i> ML</span><span class="product-add">+</span><span class="product-icon">💎</span><div class="product-name">ML 875 (774+101)</div><div class="product-price">Rp 221.857</div></div>
+        </div>
+      </div>
+      <div class="ml-subpage" id="mlsub-membership">
+        <div class="section-hdr"><i class="fi fi-rr-crown" style="line-height:1"></i> ML Membership</div>
+        <div class="product-grid">
+          <div class="product-card ml-card" data-id="ml-wdp1" data-name="ML Weekly Diamond Pass x1" data-price="27969" data-icon="👑" data-drip="0"><span class="cat-tag cat-ml-member"><i class="fi fi-rr-crown" style="line-height:1"></i> Member</span><span class="product-add">+</span><span class="product-icon">👑</span><div class="product-name">Weekly Diamond Pass x1</div><div class="product-price">Rp 27.969</div></div>
+          <div class="product-card ml-card" data-id="ml-starlight" data-name="ML Starlight Member" data-price="77400" data-icon="⭐" data-drip="0"><span class="cat-tag cat-ml-member"><i class="fi fi-rr-crown" style="line-height:1"></i> Member</span><span class="product-add">+</span><span class="product-icon">⭐</span><div class="product-name">Starlight Member</div><div class="product-price">Rp 77.400</div></div>
+          <div class="product-card ml-card" data-id="ml-twilight" data-name="ML Twilight Pass" data-price="143712" data-icon="🌙" data-drip="0"><span class="cat-tag cat-ml-member"><i class="fi fi-rr-crown" style="line-height:1"></i> Member</span><span class="product-add">+</span><span class="product-icon">🌙</span><div class="product-name">Twilight Pass</div><div class="product-price">Rp 143.712</div></div>
+          <div class="product-card ml-card" data-id="ml-starlight-plus" data-name="ML Starlight Member Plus" data-price="190025" data-icon="🌟" data-drip="0"><span class="cat-tag cat-ml-member"><i class="fi fi-rr-crown" style="line-height:1"></i> Member</span><span class="product-add">+</span><span class="product-icon">🌟</span><div class="product-name">Starlight Member Plus</div><div class="product-price">Rp 190.025</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-page" id="tab-calc">
+    <div class="calc-wrap">
+      <div class="calc-header">
+        <div class="calc-title"><i class="fi fi-rr-calculator" style="line-height:1;font-size:22px;vertical-align:middle"></i> Kalkulator Harga</div>
+        <div class="calc-sub">Hitung total belanja, profit, atau diskon dengan mudah</div>
+      </div>
+      <div class="calc-card">
+        <div class="calc-card-title"><i class="fi fi-rr-shopping-cart" style="line-height:1"></i> Hitung Total Belanja</div>
+        <div style="margin-bottom:14px">
+          <div class="calc-label" style="margin-bottom:8px">Tambah Item</div>
+          <div style="display:flex;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
+            <input class="calc-input" id="itemName" placeholder="Nama produk" style="flex:1;min-width:120px;">
+            <input class="calc-input" id="itemPrice" type="number" placeholder="Harga" style="width:120px;">
+            <input class="calc-input" id="itemQty" type="number" placeholder="Qty" value="1" style="width:70px;">
+          </div>
+          <button class="calc-btn" onclick="addCalcItem()" style="padding:10px 20px;width:auto;font-size:13px;display:inline-flex;align-items:center;gap:6px;border-radius:8px;">
+            <i class="fi fi-rr-plus" style="line-height:1"></i> Tambah
+          </button>
+        </div>
+        <div id="calcItemList" style="margin-bottom:14px"></div>
+        <div class="calc-card-title" style="margin-top:20px"><i class="fi fi-rr-percentage" style="line-height:1"></i> Diskon &amp; Biaya</div>
+        <div class="calc-row">
+          <div class="calc-field">
+            <div class="calc-label">Diskon (%)</div>
+            <input class="calc-input" id="calcDisc" type="number" placeholder="0" value="0" min="0" max="100">
+          </div>
+          <div class="calc-field">
+            <div class="calc-label">Biaya Tambahan (Rp)</div>
+            <input class="calc-input" id="calcExtra" type="number" placeholder="0" value="0">
+          </div>
+        </div>
+        <button class="calc-btn" onclick="calcTotal()">Hitung Total</button>
+        <div class="calc-result" id="calcResult">
+          <div class="calc-result-title">📊 Hasil Perhitungan</div>
+          <div class="calc-result-row"><span class="calc-result-label">Subtotal</span><span class="calc-result-val" id="resSubtotal">-</span></div>
+          <div class="calc-result-row"><span class="calc-result-label">Diskon</span><span class="calc-result-val" id="resDisc" style="color:#f87171">-</span></div>
+          <div class="calc-result-row"><span class="calc-result-label">Biaya Tambahan</span><span class="calc-result-val" id="resExtra">-</span></div>
+          <div class="calc-result-row"><span class="calc-result-label" style="font-weight:700;color:var(--text)">TOTAL</span><span class="calc-result-total" id="resTotal">-</span></div>
+        </div>
+      </div>
+      <div class="calc-card">
+        <div class="calc-card-title"><i class="fi fi-rr-chart-line-up" style="line-height:1"></i> Kalkulator Profit</div>
+        <div class="calc-row">
+          <div class="calc-field">
+            <div class="calc-label">Harga Modal (Rp)</div>
+            <input class="calc-input" id="pModal" type="number" placeholder="Harga beli">
+          </div>
+          <div class="calc-field">
+            <div class="calc-label">Harga Jual (Rp)</div>
+            <input class="calc-input" id="pJual" type="number" placeholder="Harga jual">
+          </div>
+        </div>
+        <div class="calc-row">
+          <div class="calc-field">
+            <div class="calc-label">Jumlah Item</div>
+            <input class="calc-input" id="pQty" type="number" placeholder="1" value="1">
+          </div>
+          <div class="calc-field">
+            <div class="calc-label">Ongkos Lain (Rp)</div>
+            <input class="calc-input" id="pCost" type="number" placeholder="0" value="0">
+          </div>
+        </div>
+        <button class="calc-btn" onclick="calcProfit()">Hitung Profit</button>
+        <div class="calc-result" id="profitResult">
+          <div class="calc-result-title">💰 Hasil Profit</div>
+          <div class="calc-result-row"><span class="calc-result-label">Total Modal</span><span class="calc-result-val" id="pResModal">-</span></div>
+          <div class="calc-result-row"><span class="calc-result-label">Total Penjualan</span><span class="calc-result-val" id="pResJual">-</span></div>
+          <div class="calc-result-row"><span class="calc-result-label">Profit Bersih</span><span class="calc-result-val" id="pResProfit" style="color:#34d399">-</span></div>
+          <div class="calc-result-row"><span class="calc-result-label" style="font-weight:700;color:var(--text)">Margin</span><span class="calc-result-total" id="pResMargin">-</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-page" id="tab-logo">
+    <div class="logo-wrap">
+      <div class="logo-controls">
+        <div class="logo-ctrl-title"><i class="fi fi-rr-settings" style="line-height:1;margin-right:6px"></i> Logo Maker Pro</div>
+
+        <div class="ctrl-section-title">Teks</div>
+        <div class="ctrl-group">
+          <div class="ctrl-label">Nama Logo / Teks Utama</div>
+          <input class="ctrl-input" id="logoName" placeholder="Contoh: Alrect" value="Alrect" oninput="drawLogo()">
+        </div>
+        <div class="ctrl-group">
+          <div class="ctrl-label">Sub Teks (Store/Shop/dll)</div>
+          <input class="ctrl-input" id="logoSub" placeholder="Contoh: Store" value="Store" oninput="drawLogo()">
+        </div>
+        <div class="ctrl-group">
+          <div class="ctrl-label">Teks Tambahan (opsional)</div>
+          <input class="ctrl-input" id="logoExtra" placeholder="Contoh: Official • Trusted" value="" oninput="drawLogo()">
+        </div>
+
+        <div class="ctrl-section-sep"></div>
+        <div class="ctrl-section-title">Font &amp; Ukuran</div>
+        <div class="ctrl-group">
+          <div class="ctrl-label">Font Utama</div>
+          <select class="ctrl-select" id="logoFont" onchange="drawLogo()">
+            <option value="Orbitron">Orbitron — Sci-Fi</option>
+            <option value="Bebas Neue">Bebas Neue — Bold Impact</option>
+            <option value="Pacifico">Pacifico — Casual Fun</option>
+            <option value="Dancing Script">Dancing Script — Kaligrafi</option>
+            <option value="Rajdhani">Rajdhani — Modern Tech</option>
+            <option value="Cinzel">Cinzel — Elegan Klasik</option>
+            <option value="Press Start 2P">Press Start 2P — Retro Game</option>
+            <option value="Outfit" selected>Outfit — Clean Modern</option>
+            <option value="Righteous">Righteous — Sporty</option>
+            <option value="Russo One">Russo One — Bold Sans</option>
+            <option value="Monoton">Monoton — Neon Sign</option>
+            <option value="Audiowide">Audiowide — Digital</option>
+            <option value="Exo 2">Exo 2 — Futuristik</option>
+            <option value="Permanent Marker">Permanent Marker — Graffiti</option>
+            <option value="Titan One">Titan One — Bold Display</option>
+            <option value="Black Ops One">Black Ops One — Military</option>
+            <option value="Bungee">Bungee — Street</option>
+            <option value="Bungee Inline">Bungee Inline — Decorative</option>
+            <option value="Creepster">Creepster — Horror</option>
+            <option value="Lobster">Lobster — Retro Script</option>
+            <option value="Satisfy">Satisfy — Elegant Script</option>
+            <option value="Abril Fatface">Abril Fatface — Display</option>
+            <option value="Alfa Slab One">Alfa Slab One — Slab Serif</option>
+          </select>
+        </div>
+        <div class="ctrl-group">
+          <div class="ctrl-label">Ukuran Teks Utama <span class="ctrl-val" id="fontSizeVal">64</span>px</div>
+          <input class="ctrl-range" type="range" id="logoFontSize" min="16" max="160" value="64" oninput="document.getElementById('fontSizeVal').textContent=this.value;drawLogo()">
+        </div>
+        <div class="ctrl-group">
+          <div class="ctrl-label">Ukuran Sub Teks <span class="ctrl-val" id="subSizeVal">28</span>px</div>
+          <input class="ctrl-range" type="range" id="logoSubSize" min="8" max="80" value="28" oninput="document.getElementById('subSizeVal').textContent=this.value;drawLogo()">
+        </div>
+        <div class="ctrl-group">
+          <div class="ctrl-label">Rotate Teks Utama <span class="ctrl-val" id="rotateVal">0</span>°</div>
+          <input class="ctrl-range" type="range" id="logoRotate" min="-45" max="45" value="0" oninput="document.getElementById('rotateVal').textContent=this.value;drawLogo()">
+        </div>
+        <div class="ctrl-group">
+          <div class="ctrl-label">Spasi Huruf <span class="ctrl-val" id="spacingVal">4</span>px</div>
+          <input class="ctrl-range" type="range" id="logoSpacing" min="0" max="30" value="4" oninput="document.getElementById('spacingVal').textContent=this.value;drawLogo()">
+        </div>
+        <div class="ctrl-group">
+          <div class="ctrl-label">Posisi Y Teks Utama <span class="ctrl-val" id="posYVal">50</span>%</div>
+          <input class="ctrl-range" type="range" id="logoPosY" min="10" max="90" value="50" oninput="document.getElementById('posYVal').textContent=this.value;drawLogo()">
+        </div>
+        <div class="ctrl-group">
+          <div class="ctrl-label">Opasitas Teks <span class="ctrl-val" id="opacityVal">100</span>%</div>
+          <input class="ctrl-range" type="range" id="logoOpacity" min="10" max="100" value="100" oninput="document.getElementById('opacityVal').textContent=this.value;drawLogo()">
+        </div>
+
+        <div class="ctrl-section-sep"></div>
+        <div class="ctrl-section-title">Warna Teks</div>
+        <div class="ctrl-group">
+          <div class="ctrl-color-row" id="textColors">
+            <div class="color-preset selected" style="background:#ffffff" data-color="#ffffff" onclick="selectTextColor(this)"></div>
+            <div class="color-preset" style="background:linear-gradient(135deg,#3b82f6,#06b6d4)" data-color="gradient-blue" onclick="selectTextColor(this)"></div>
+            <div class="color-preset" style="background:linear-gradient(135deg,#f59e0b,#ef4444)" data-color="gradient-gold" onclick="selectTextColor(this)"></div>
+            <div class="color-preset" style="background:linear-gradient(135deg,#a855f7,#ec4899)" data-color="gradient-pink" onclick="selectTextColor(this)"></div>
+            <div class="color-preset" style="background:linear-gradient(135deg,#10b981,#06b6d4)" data-color="gradient-green" onclick="selectTextColor(this)"></div>
+            <div class="color-preset" style="background:linear-gradient(135deg,#f59e0b,#84cc16)" data-color="gradient-lime" onclick="selectTextColor(this)"></div>
+            <div class="color-preset" style="background:#10b981" data-color="#10b981" onclick="selectTextColor(this)"></div>
+            <div class="color-preset" style="background:#f59e0b" data-color="#f59e0b" onclick="selectTextColor(this)"></div>
+            <div class="color-preset" style="background:#ef4444" data-color="#ef4444" onclick="selectTextColor(this)"></div>
+            <div class="color-preset" style="background:#8b5cf6" data-color="#8b5cf6" onclick="selectTextColor(this)"></div>
+            <div class="color-preset" style="background:#ec4899" data-color="#ec4899" onclick="selectTextColor(this)"></div>
+            <div class="color-preset" style="background:#000000;border:1px solid #333" data-color="#000000" onclick="selectTextColor(this)"></div>
+          </div>
+          <input type="color" id="customTextColor" value="#ffffff" onchange="selectCustomColor(this.value)" style="margin-top:8px;width:100%;height:32px;border-radius:6px;border:1px solid var(--border);background:transparent;cursor:pointer;">
+        </div>
+
+        <div class="ctrl-section-sep"></div>
+        <div class="ctrl-section-title">Efek Teks</div>
+        <div class="ctrl-group">
+          <div class="ctrl-label">Efek Utama</div>
+          <select class="ctrl-select" id="logoEffect" onchange="drawLogo()">
+            <option value="none">Tidak Ada</option>
+            <option value="shadow">Drop Shadow</option>
+            <option value="glow">Glow Effect</option>
+            <option value="outline">Outline / Border</option>
+            <option value="3d">3D Text Effect</option>
+            <option value="neon">Neon Glow</option>
+            <option value="emboss">Emboss / Timbul</option>
+          </select>
+        </div>
+        <div class="toggle-row">
+          <span class="toggle-label-text">Font Shadow (bayangan teks)</span>
+          <label class="toggle-switch">
+            <input type="checkbox" id="logoFontShadow">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <div class="ctrl-group" id="fontShadowOptions" style="display:none;">
+          <div class="ctrl-label">Warna Shadow</div>
+          <input type="color" id="shadowColor" value="#000000" onchange="drawLogo()" style="width:100%;height:32px;border-radius:6px;border:1px solid var(--border);background:transparent;cursor:pointer;">
+          <div class="ctrl-label" style="margin-top:8px;">Blur Shadow <span class="ctrl-val" id="shadowBlurVal">10</span>px</div>
+          <input class="ctrl-range" type="range" id="shadowBlur" min="0" max="40" value="10" oninput="document.getElementById('shadowBlurVal').textContent=this.value;drawLogo()">
+          <div class="ctrl-label" style="margin-top:8px;">Offset X <span class="ctrl-val" id="shadowOffXVal">4</span>px</div>
+          <input class="ctrl-range" type="range" id="shadowOffX" min="-20" max="20" value="4" oninput="document.getElementById('shadowOffXVal').textContent=this.value;drawLogo()">
+          <div class="ctrl-label" style="margin-top:8px;">Offset Y <span class="ctrl-val" id="shadowOffYVal">4</span>px</div>
+          <input class="ctrl-range" type="range" id="shadowOffY" min="-20" max="20" value="4" oninput="document.getElementById('shadowOffYVal').textContent=this.value;drawLogo()">
+        </div>
+        <div class="toggle-row">
+          <span class="toggle-label-text">Inner Shadow (bayangan dalam)</span>
+          <label class="toggle-switch">
+            <input type="checkbox" id="logoInnerShadow">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <div class="ctrl-group" id="innerShadowOptions" style="display:none;">
+          <div class="ctrl-label">Warna Inner Shadow</div>
+          <input type="color" id="innerShadowColor" value="#000000" onchange="drawLogo()" style="width:100%;height:32px;border-radius:6px;border:1px solid var(--border);background:transparent;cursor:pointer;">
+          <div class="ctrl-label" style="margin-top:8px;">Opasitas Inner Shadow <span class="ctrl-val" id="innerShadowOpacVal">60</span>%</div>
+          <input class="ctrl-range" type="range" id="innerShadowOpac" min="10" max="100" value="60" oninput="document.getElementById('innerShadowOpacVal').textContent=this.value;drawLogo()">
+        </div>
+
+        <div class="ctrl-section-sep"></div>
+        <div class="ctrl-section-title">Background</div>
+        <div class="ctrl-group">
+          <div class="ctrl-label">Pilih Background</div>
+          <select class="ctrl-select" id="logoBg" onchange="drawLogo()">
+            <option value="dark">Dark (Default)</option>
+            <option value="gradient-blue">Gradient Biru</option>
+            <option value="gradient-gold">Gradient Gold</option>
+            <option value="gradient-purple">Gradient Purple</option>
+            <option value="gradient-green">Gradient Hijau</option>
+            <option value="gradient-pink">Gradient Pink</option>
+            <option value="gradient-red">Gradient Merah</option>
+            <option value="gradient-cyan">Gradient Cyan</option>
+            <option value="gradient-dark-blue">Gradient Dark Blue</option>
+            <option value="gradient-sunset">Gradient Sunset</option>
+            <option value="gradient-neon">Gradient Neon</option>
+            <option value="gradient-forest">Gradient Forest</option>
+            <option value="black">Hitam Solid</option>
+            <option value="white">Putih Solid</option>
+            <option value="navy">Navy Blue</option>
+            <option value="darkred">Dark Red</option>
+            <option value="transparent">Transparan</option>
+            <option value="custom-bg">Warna Custom</option>
+            <option value="gallery">Galeri / Upload Foto</option>
+          </select>
+        </div>
+        <div class="ctrl-group" id="customBgWrap" style="display:none;">
+          <div class="ctrl-label">Warna Background Custom</div>
+          <input type="color" id="customBgColor" value="#141c2e" onchange="drawLogo()" style="width:100%;height:32px;border-radius:6px;border:1px solid var(--border);background:transparent;cursor:pointer;">
+        </div>
+        <div class="ctrl-group" id="galleryBgWrap" style="display:none;">
+          <div class="ctrl-label" style="margin-bottom:8px;">Pilih dari Galeri</div>
+          <div class="bg-gallery">
+            <div class="bg-gallery-item selected" onclick="selectGalleryBg(this,null)" data-url="">
+              <div style="width:100%;height:100%;background:linear-gradient(135deg,#07090f,#0f1520);display:flex;align-items:center;justify-content:center;"><span style="font-size:9px;color:#4a5568;font-weight:700;">NONE</span></div>
+            </div>
+            <div class="bg-gallery-item" onclick="selectGalleryBg(this,'https://images.unsplash.com/photo-1518791841217-8f162f1912da?w=800&q=80')" data-url="https://images.unsplash.com/photo-1518791841217-8f162f1912da?w=800&q=80">
+              <img src="https://images.unsplash.com/photo-1518791841217-8f162f1912da?w=200&q=60" alt="bg1" loading="lazy">
+              <div class="bg-label">Space</div>
+            </div>
+            <div class="bg-gallery-item" onclick="selectGalleryBg(this,'https://images.unsplash.com/photo-1557683316-973673baf926?w=800&q=80')" data-url="">
+              <img src="https://images.unsplash.com/photo-1557683316-973673baf926?w=200&q=60" alt="bg2" loading="lazy">
+              <div class="bg-label">Gradient</div>
+            </div>
+            <div class="bg-gallery-item" onclick="selectGalleryBg(this,'https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=800&q=80')">
+              <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=200&q=60" alt="bg3" loading="lazy">
+              <div class="bg-label">Galaxy</div>
+            </div>
+            <div class="bg-gallery-item" onclick="selectGalleryBg(this,'https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=800&q=80')">
+              <img src="https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=200&q=60" alt="bg4" loading="lazy">
+              <div class="bg-label">Abstract</div>
+            </div>
+            <div class="bg-gallery-item" onclick="selectGalleryBg(this,'https://images.unsplash.com/photo-1563089145-599997674d42?w=800&q=80')">
+              <img src="https://images.unsplash.com/photo-1563089145-599997674d42?w=200&q=60" alt="bg5" loading="lazy">
+              <div class="bg-label">Neon</div>
+            </div>
+          </div>
+          <div class="ctrl-label" style="margin-top:10px;margin-bottom:6px;">Atau Upload Foto Sendiri</div>
+          <input type="file" id="bgUploadInput" accept="image/*" onchange="handleBgUpload(this)" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:var(--radius-xs);padding:8px;color:var(--muted2);font-size:12px;cursor:pointer;">
+        </div>
+        <div class="toggle-row">
+          <span class="toggle-label-text">Vignette (sudut gelap)</span>
+          <label class="toggle-switch">
+            <input type="checkbox" id="logoVignette">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <div class="ctrl-group" id="vignetteOptions" style="display:none;">
+          <div class="ctrl-label">Intensitas Vignette <span class="ctrl-val" id="vignetteVal">60</span>%</div>
+          <input class="ctrl-range" type="range" id="vignetteIntensity" min="10" max="100" value="60" oninput="document.getElementById('vignetteVal').textContent=this.value;drawLogo()">
+          <div class="ctrl-label" style="margin-top:8px;">Warna Vignette</div>
+          <input type="color" id="vignetteColor" value="#000000" onchange="drawLogo()" style="width:100%;height:32px;border-radius:6px;border:1px solid var(--border);background:transparent;cursor:pointer;">
+        </div>
+
+        <div class="ctrl-section-sep"></div>
+        <div class="ctrl-section-title">Icon Store &amp; Posisi</div>
+        <div class="ctrl-group">
+          <div class="ctrl-label" style="margin-bottom:8px;">Icon Store (Flaticon)</div>
+          <div class="logo-icons-row" id="storeIconRow">
+            <div class="icon-btn selected" data-icon="none" onclick="selectStoreIcon(this)" style="font-size:11px;font-weight:700;min-width:48px;">Tidak Ada</div>
+            <div class="fi-icon-btn" data-icon="store" onclick="selectStoreIcon(this)"><i class="fi fi-rr-shop" style="line-height:1"></i></div>
+            <div class="fi-icon-btn" data-icon="cart" onclick="selectStoreIcon(this)"><i class="fi fi-rr-shopping-cart" style="line-height:1"></i></div>
+            <div class="fi-icon-btn" data-icon="bolt" onclick="selectStoreIcon(this)"><i class="fi fi-rr-bolt" style="line-height:1"></i></div>
+            <div class="fi-icon-btn" data-icon="fire" onclick="selectStoreIcon(this)"><i class="fi fi-rr-fire" style="line-height:1"></i></div>
+            <div class="fi-icon-btn" data-icon="diamond" onclick="selectStoreIcon(this)"><i class="fi fi-rr-diamond" style="line-height:1"></i></div>
+            <div class="fi-icon-btn" data-icon="crown" onclick="selectStoreIcon(this)"><i class="fi fi-rr-crown" style="line-height:1"></i></div>
+            <div class="fi-icon-btn" data-icon="star" onclick="selectStoreIcon(this)"><i class="fi fi-rr-star" style="line-height:1"></i></div>
+            <div class="fi-icon-btn" data-icon="target" onclick="selectStoreIcon(this)"><i class="fi fi-rr-target" style="line-height:1"></i></div>
+            <div class="fi-icon-btn" data-icon="game" onclick="selectStoreIcon(this)"><i class="fi fi-rr-gamepad" style="line-height:1"></i></div>
+            <div class="fi-icon-btn" data-icon="rocket" onclick="selectStoreIcon(this)"><i class="fi fi-rr-rocket" style="line-height:1"></i></div>
+            <div class="fi-icon-btn" data-icon="shield" onclick="selectStoreIcon(this)"><i class="fi fi-rr-shield-check" style="line-height:1"></i></div>
+            <div class="fi-icon-btn" data-icon="music" onclick="selectStoreIcon(this)"><i class="fi fi-rr-music" style="line-height:1"></i></div>
+          </div>
+        </div>
+        <div class="ctrl-group">
+          <div class="ctrl-label" style="margin-bottom:6px;">Posisi Icon</div>
+          <div class="icon-pos-row">
+            <div class="icon-pos-btn selected" data-pos="left" onclick="selectIconPos(this)"><i class="fi fi-rr-arrow-left" style="line-height:1"></i> Kiri Teks</div>
+            <div class="icon-pos-btn" data-pos="right" onclick="selectIconPos(this)">Kanan Teks <i class="fi fi-rr-arrow-right" style="line-height:1"></i></div>
+            <div class="icon-pos-btn" data-pos="above" onclick="selectIconPos(this)"><i class="fi fi-rr-arrow-up" style="line-height:1"></i> Di Atas</div>
+          </div>
+        </div>
+
+        <div class="ctrl-section-sep"></div>
+        <div class="ctrl-section-title">Kontak di Logo</div>
+        <div class="toggle-row">
+          <span class="toggle-label-text">Tampilkan Icon WhatsApp</span>
+          <label class="toggle-switch">
+            <input type="checkbox" id="showWaIcon">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <div class="ctrl-group" id="waOptions" style="display:none;">
+          <div class="ctrl-label">Nomor WhatsApp</div>
+          <input class="ctrl-input" id="waNumber" placeholder="Contoh: 082192401340" value="082192401340" oninput="drawLogo()">
+        </div>
+        <div class="toggle-row">
+          <span class="toggle-label-text">Tampilkan Icon Instagram</span>
+          <label class="toggle-switch">
+            <input type="checkbox" id="showIgIcon">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <div class="ctrl-group" id="igOptions" style="display:none;">
+          <div class="ctrl-label">Username Instagram</div>
+          <input class="ctrl-input" id="igUsername" placeholder="Contoh: @alrect.store" value="@alrect.store" oninput="drawLogo()">
+        </div>
+        <div class="toggle-row">
+          <span class="toggle-label-text">Tampilkan Icon TikTok</span>
+          <label class="toggle-switch">
+            <input type="checkbox" id="showTtIcon">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <div class="ctrl-group" id="ttOptions" style="display:none;">
+          <div class="ctrl-label">Username TikTok</div>
+          <input class="ctrl-input" id="ttUsername" placeholder="Contoh: @alrect" value="@alrect" oninput="drawLogo()">
+        </div>
+
+        <div style="margin-top:4px;">
+          <button class="logo-download-btn" onclick="downloadLogo()">
+            <i class="fi fi-rr-download" style="line-height:1"></i> Download PNG
+          </button>
+        </div>
+      </div>
+
+      <div class="logo-preview-wrap">
+        <div class="logo-preview-title"><i class="fi fi-rr-eye" style="line-height:1;margin-right:6px"></i> Preview Logo</div>
+        <div class="logo-canvas-wrap">
+          <canvas id="logoCanvas" width="800" height="450"></canvas>
+        </div>
+        <p style="font-size:11px;color:var(--muted);margin-top:10px;text-align:center">Canvas 800×450px — Download dalam resolusi penuh</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<nav class="bottombar">
+  <div class="bottombar-inner">
+    <div class="bottombar-item active" id="bnavitem-home" onclick="switchTab('home','Beranda')">
+      <i class="fi fi-rr-home"></i>
+      <span class="bottombar-item-label">Beranda</span>
+    </div>
+    <div class="bottombar-item" id="bnavitem-ml" onclick="switchTab('ml','Top Up ML')">
+      <i class="fi fi-rr-gamepad"></i>
+      <span class="bottombar-item-label">ML</span>
+    </div>
+    <div class="bottombar-item" id="bnavitem-calc" onclick="switchTab('calc','Kalkulator')">
+      <i class="fi fi-rr-calculator"></i>
+      <span class="bottombar-item-label">Kalkulator</span>
+    </div>
+    <div class="bottombar-item" id="bnavitem-logo" onclick="switchTab('logo','Logo Maker')">
+      <i class="fi fi-rr-image"></i>
+      <span class="bottombar-item-label">Logo</span>
+    </div>
+    <button class="bottombar-cart-btn" onclick="toggleCart()" style="color:var(--muted2);">
+      <i class="fi fi-br-shopping-cart" style="font-size:19px;line-height:1"></i>
+      <span class="bottombar-item-label">Keranjang</span>
+      <span class="cart-badge" id="cartBadgeBottom" style="top:-4px;right:calc(50% - 22px);"></span>
+    </button>
+  </div>
+</nav>
+
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h3><i class="fi fi-br-shopping-cart" style="line-height:1"></i> Keranjang</h3>
+    <button class="cart-close" onclick="toggleCart()"><i class="fi fi-br-cross" style="line-height:1"></i></button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer">
+    <div class="payment-label">Pilih Pembayaran</div>
+    <div class="payment-options">
+      <div class="pay-opt selected" id="pay-dana" onclick="selectPayment('dana')">
+        <div class="pay-logo pay-dana">DANA</div><div class="pay-opt-name">Dana</div>
+      </div>
+      <div class="pay-opt" id="pay-kiopay" onclick="selectPayment('kiopay')">
+        <div class="pay-logo pay-kiopay">KIO</div><div class="pay-opt-name">KioPay</div>
+      </div>
+      <div class="pay-opt" id="pay-hyrizz" onclick="selectPayment('hyrizz')">
+        <div class="pay-logo pay-hyrizz">HYR</div><div class="pay-opt-name">Hyrizz</div>
+      </div>
+    </div>
+    <div class="cart-total">
+      <span class="cart-total-label">Total</span>
+      <span class="cart-total-val" id="cartTotal">Rp 0</span>
+    </div>
+    <button class="checkout-btn" id="checkoutBtn" onclick="checkout()" disabled>
+      <i class="fi fi-br-whatsapp" style="line-height:1;font-size:17px"></i> Order via WhatsApp
+    </button>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<audio id="bgMusic" loop>
+  <source src="https://sf16-ies-music-sg.tiktokcdn.com/obj/tiktok-obj/7626110255894285073.mp3" type="audio/mpeg">
+</audio>
+<script src="script.js"></script>
+</body>
+</html>
